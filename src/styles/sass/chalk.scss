@@ -11,10 +11,15 @@ $browser-context: 16;
 		margin: 0 auto;
 		div {
 			#chalk-list {
+				margin: 0 auto;
+				display: block;
+				position: absolute;
 				text-align: center;
 				li {
 					.chalk-img {
-						height: 20em !important;
+						height: 30em;
+						width: auto;
+						margin-bottom: 3em;
 					}
 					h3 {
 						font-family: "futura-pt";
