@@ -27,6 +27,18 @@
       color: hotpink;
       font-size: 1.6875em; }
 
+.coming-soon {
+  text-align: center;
+  margin-top: 6em; }
+  .coming-soon h1 {
+    font-family: 'futura-pt';
+    font-style: bold;
+    font-size: 6vw; }
+  .coming-soon p {
+    font-family: 'futura-pt';
+    font-style: italic;
+    font-size: 4vw; }
+
 .design-project-view {
   height: auto;
   margin-bottom: 20%; }

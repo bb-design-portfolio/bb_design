@@ -1,4 +1,3 @@
-/*global require*/
 (function (r) {
     "use strict";
 
@@ -29,11 +28,12 @@ var paths = {
     markupSrc: 'src/app/**/*.html',
     imgSrc:'src/assets/img/*',
     styleSrc: 'src/styles/**/*.css',
+		styleSrcSass: 'src/styles/**/*.scss',
 		vendorFiles: 'src/vendors/*',
     appSrc: ['src/app/*/*.js', '!src/index.html'],
 };
 
-gulp.task('default', ['watch', 'copy-fonts', 'browser-sync', 'nodemon']);
+gulp.task('default', ['watch', 'sass', 'copy-fonts', 'browser-sync', 'nodemon']);
 
 // refactor
 gulp.task('watch', ['serve'], function () {
@@ -42,6 +42,7 @@ gulp.task('watch', ['serve'], function () {
     gulp.watch(paths.appSrc, ['copyFiles']);
 		gulp.watch(paths.vendorFiles, ['copyFiles']);
     gulp.watch(paths.index, ['copyFiles']);
+		gulp.watch('src/styles/sass/*.scss', ['sass']);
 });
 
 gulp.task('serve', ['copyFiles'], function() {
@@ -55,6 +56,12 @@ gulp.task('serve', ['copyFiles'], function() {
     }));
 });
 
+gulp.task('sass', function () {
+	  return gulp.src('src/styles/sass/*.scss')
+	    .pipe(sass().on('error', sass.logError))
+	    .pipe(gulp.dest('./src/styles/css/'));
+});
+
 gulp.task('copyFiles', function () {
 
     var appFiles = gulp.src(paths.appSrc)
@@ -64,7 +71,7 @@ gulp.task('copyFiles', function () {
 				// .pipe(concat('app.js'))
         .pipe(gulp.dest(paths.buildApp));
 
-    var appStyles = gulp.src(paths.styleSrc)
+    var appStyles = gulp.src('src/styles/css/*.css')
         .pipe(sass.sync({
             outputStyle: 'compressed',
             errLogToConsole: true

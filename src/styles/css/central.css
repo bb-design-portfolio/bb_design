@@ -35,7 +35,7 @@
     float: right;
     height: 101vh;
     width: 51%;
-    background-image: url("../../assets/img/bb_action.jpg");
+    background-image: url("../../../assets/img/bb_action.jpg");
     background-position: center center;
     background-size: cover; }
 
@@ -62,16 +62,50 @@
 .chalk-main-view {
   text-align: center; }
   .chalk-main-view .row {
-    text-align: center;
-    margin: 0 auto; }
-    .chalk-main-view .row div #chalk-list li .chalk-img {
-      height: 20em !important; }
-    .chalk-main-view .row div #chalk-list li h3 {
-      font-family: "futura-pt";
-      font-style: italic; }
-    .chalk-main-view .row div #chalk-list li h4 {
-      font-family: "futura-pt";
-      font-weight: ligher; }
+    width: 100%;
+    margin-top: 1em; }
+    .chalk-main-view .row div #chalk-list {
+      width: 80%;
+      margin: 0 10%;
+      position: absolute;
+      text-align: center; }
+      .chalk-main-view .row div #chalk-list li {
+        width: 100%; }
+        .chalk-main-view .row div #chalk-list li .chalk-img {
+          height: auto;
+          width: 50%;
+          margin-bottom: 5em;
+          float: left;
+          margin-right: 2em;
+          transition: all .2s ease-in-out; }
+          .chalk-main-view .row div #chalk-list li .chalk-img:hover {
+            transform: scale(1.05);
+            cursor: pointer; }
+        .chalk-main-view .row div #chalk-list li h2 {
+          text-align: left;
+          display: block;
+          font-weight: lighter;
+          font-family: "futura-pt";
+          float: right;
+          font-size: 1.4375em;
+          margin-right: 8em;
+          margin-top: 1em; }
+          .chalk-main-view .row div #chalk-list li h2 small {
+            margin-bottom: 8em; }
+
+@media (min-width: 28.125em) and (max-width: 53.125em) {
+  #chalk-list h2 {
+    margin-right: 0em !important;
+    font-size: 1.0625em; } }
+
+@media (max-width: 28.125em) {
+  #chalk-list {
+    margin-top: 3em; }
+    #chalk-list li h2 {
+      display: none !important; }
+    #chalk-list li img {
+      height: 18em !important;
+      width: 18em !important; } }
 
 /**********CLAY MAIN GALLERY**************/
 .clay-main-view {
@@ -375,6 +409,18 @@
     .design-main-view .row .design-box span {
       color: hotpink;
       font-size: 1.6875em; }
+
+.coming-soon {
+  text-align: center;
+  margin-top: 6em; }
+  .coming-soon h1 {
+    font-family: 'futura-pt';
+    font-style: bold;
+    font-size: 6vw; }
+  .coming-soon p {
+    font-family: 'futura-pt';
+    font-style: italic;
+    font-size: 4vw; }
 
 .design-project-view {
   height: auto;
@@ -815,7 +861,7 @@
   .home-view .row .main-home-image {
     margin-top: 0em;
     height: 90.2vh;
-    background-image: url("../../assets/img/clay_close_1_brighter.jpg");
+    background-image: url("../../../assets/img/clay_close_1_brighter.jpg");
     background-size: cover;
     -moz-background-size: cover;
     -webkit-background-size: cover;
