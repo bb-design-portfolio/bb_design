@@ -111,10 +111,10 @@ gulp.task('copy-fonts', function() {
 });
 
 //COPY INDEX FROM BUILD TO ROOT FOR GH-PAGES (to be deleted in production)
-gulp.task('copy-index', function() {
-	return gulp.src('./build/index.html')
-		.pipe(gulp.dest('./'));
-});
+// gulp.task('copy-index', function() {
+// 	return gulp.src('./build/index.html')
+// 		.pipe(gulp.dest('./'));
+// });
 
 gulp.task('images', function() {
     gulp.src('src/assets/img/*')
