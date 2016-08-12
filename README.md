@@ -1,2 +1,2 @@
+Brooke Burnside Design Portfolio
 
-'smoothScroll'
