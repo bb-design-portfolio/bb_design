@@ -19,9 +19,9 @@ var gulp 					= r('gulp'),
 
 var paths = {
     build : 'build/',
-    buildImgs: '/assets/img/',
-    buildStyles: 'build/styles/css',
-    buildApp: '/app/',
+    buildImgs: 'build/assets/img/',
+    buildStyles: 'build/styles/',
+    buildApp: 'build/app/',
     buildIndex: 'build/index.html',
 		buildVendor: 'build/vendor/',
 
@@ -30,10 +30,10 @@ var paths = {
     imgSrc:'src/assets/img/*',
     styleSrc: 'src/styles/**/*.scss',
 		vendorFiles: 'src/vendors/*',
-    appSrc: ['src/app/**/*.js', '!src/index.html'],
+    appSrc: ['src/app/*/*.js', '!src/index.html'],
 };
 
-gulp.task('default', ['watch', 'copy-index', 'copy-fonts', 'browser-sync', 'nodemon']);
+gulp.task('default', ['watch', 'copy-fonts', 'browser-sync', 'nodemon']);
 
 // refactor
 gulp.task('watch', ['serve'], function () {
@@ -70,7 +70,7 @@ gulp.task('copyFiles', function () {
             outputStyle: 'compressed',
             errLogToConsole: true
         }))
-        .pipe(gulp.dest(paths.buildStyles));
+        .pipe(gulp.dest('build/styles/css'));
 
     var appImgs = gulp.src(paths.imgSrc)
         .pipe(gulp.dest(paths.buildImgs));
@@ -107,7 +107,7 @@ gulp.task('copyFiles', function () {
 //COPY FONTS FROM SRC TO BUILD
 gulp.task('copy-fonts', function() {
 	return gulp.src('./fonts/*')
-		.pipe(gulp.dest('.//assets/fonts/'));
+		.pipe(gulp.dest('./build/assets/fonts/'));
 });
 
 //COPY INDEX FROM BUILD TO ROOT FOR GH-PAGES (to be deleted in production)
@@ -119,7 +119,7 @@ gulp.task('copy-index', function() {
 gulp.task('images', function() {
     gulp.src('src/assets/img/*')
         .pipe(imagemin({ progressive: true }))
-        .pipe(gulp.dest('/assets/img'));
+        .pipe(gulp.dest('build/assets/img'));
 });
 
 gulp.task('clean', function () {

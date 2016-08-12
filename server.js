@@ -5,7 +5,7 @@ var express 		= require('express'),
 		http				=	require('http'),
 		app					=	express();
 
-var rootPath	=	path.normalize(__dirname + '/build/');
+var rootPath	=	path.normalize(__dirname + '/');
 
 app.use(express.static(rootPath));
 
