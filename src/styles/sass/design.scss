@@ -42,6 +42,21 @@ $browser-context: 16; // Default
 	}
 }
 
+.coming-soon {
+	text-align: center;
+	margin-top: 6em;
+	h1 {
+		font-family: 'futura-pt';
+		font-style: bold;
+		font-size: 6vw;
+	}
+	p {
+		font-family: 'futura-pt';
+		font-style: italic;
+		font-size: 4vw;
+	}
+}
+
 //////////////////Individual Project Views
 .design-project-view {
 	height: auto;

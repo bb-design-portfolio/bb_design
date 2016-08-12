@@ -19,9 +19,9 @@ var gulp 					= r('gulp'),
 
 var paths = {
     build : 'build/',
-    buildImgs: 'build/assets/img/',
+    buildImgs: '/assets/img/',
     buildStyles: 'build/styles/css',
-    buildApp: 'build/app/',
+    buildApp: '/app/',
     buildIndex: 'build/index.html',
 		buildVendor: 'build/vendor/',
 
@@ -107,7 +107,7 @@ gulp.task('copyFiles', function () {
 //COPY FONTS FROM SRC TO BUILD
 gulp.task('copy-fonts', function() {
 	return gulp.src('./fonts/*')
-		.pipe(gulp.dest('./build/assets/fonts/'));
+		.pipe(gulp.dest('.//assets/fonts/'));
 });
 
 //COPY INDEX FROM BUILD TO ROOT FOR GH-PAGES (to be deleted in production)
@@ -119,7 +119,7 @@ gulp.task('copy-index', function() {
 gulp.task('images', function() {
     gulp.src('src/assets/img/*')
         .pipe(imagemin({ progressive: true }))
-        .pipe(gulp.dest('build/assets/img'));
+        .pipe(gulp.dest('/assets/img'));
 });
 
 gulp.task('clean', function () {
